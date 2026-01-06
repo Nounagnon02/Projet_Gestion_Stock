@@ -1,0 +1,1195 @@
+                  Cahier des Charges
+Application Web de Gestion de Stock Intelligente
+
+                       Version 1.0 – Améliorée
+
+
+
+Informations Projet
+Projet : Plateforme Web de Gestion des Stocks & Ventes
+Client : Toutes les entrprises
+Réalisé par : KANGBODE Prince
+Date : 7 décembre 2025
+Version : 1.0 (Améliorée avec approche MVP)
+
+
+
+
+                          Document confidentiel
+Gestion de Stock Intelligente                                    Cahier des Charges - v2.0
+
+
+Table des matières
+
+1 Présentation du Projet                                                                    4
+  1.1 Contexte . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    4
+  1.2 Vision . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    4
+  1.3 Approche de Développement . . . . . . . . . . . . . . . . . . . . . . . . . .         4
+
+2 Objectifs du Projet                                                                       4
+  2.1 Objectifs Principaux . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      4
+  2.2 Objectifs Avancés . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     4
+
+3 Public Cible                                                                             5
+
+4 Modèle Économique                                                                        5
+
+5 Périmètre Fonctionnel                                                                     5
+  5.1 Phase 1 – MVP (Priorité Maximale) . . . . . . . . . . . . . . . . . . . . .           5
+      5.1.1  Module Authentification & Sécurité . . . . . . . . . . . . . . . .            5
+      5.1.2 e Module Gestion des Produits . . . . . . . . . . . . . . . . . . . .           6
+      5.1.3 Õ Module Gestion des Entrepôts . . . . . . . . . . . . . . . . . . .            7
+      5.1.4 ¢ Module Gestion des Stocks . . . . . . . . . . . . . . . . . . . . .           7
+      5.1.5 ï Module Ventes . . . . . . . . . . . . . . . . . . . . . . . . . . . .         7
+      5.1.6 M Module Rapports & Statistiques (MVP) . . . . . . . . . . . . . .              8
+  5.2 Phase 2 – Fonctionnalités Avancées . . . . . . . . . . . . . . . . . . . . . .        9
+      5.2.1  Module Achats & Approvisionnement . . . . . . . . . . . . . . .               9
+      5.2.2 ² Module Clients & Fournisseurs . . . . . . . . . . . . . . . . . .             9
+      5.2.3 ê Paiements Digitaux . . . . . . . . . . . . . . . . . . . . . . . . .          9
+      5.2.4 ¡ Rapports & Analytics Avancés . . . . . . . . . . . . . . . . . . .           10
+      5.2.5 f Fonctionnalités Produits Avancées . . . . . . . . . . . . . . . . .          10
+      5.2.6 9 Multi-entrepôts Complet . . . . . . . . . . . . . . . . . . . . . .          10
+  5.3 Phase 3 – Innovation & Intelligence Artificielle . . . . . . . . . . . . . . . .     10
+      5.3.1 j Intelligence Artificielle . . . . . . . . . . . . . . . . . . . . . . .      10
+      5.3.2 ? Assistant Vocal Intelligent . . . . . . . . . . . . . . . . . . . . . .      11
+      5.3.3  Reconnaissance d’Image . . . . . . . . . . . . . . . . . . . . . . .         11
+      5.3.4 L Collaboration Temps Réel . . . . . . . . . . . . . . . . . . . . .           11
+      5.3.5  Catalogue Public E-commerce . . . . . . . . . . . . . . . . . . .            12
+      5.3.6 Û Mode Offline Avancé . . . . . . . . . . . . . . . . . . . . . . . .          12
+
+6 Système de Notifications                                                                 13
+
+7 Spécifications Techniques                                                                13
+  7.1 Architecture Globale . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     13
+  7.2 Stack Technique . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    14
+      7.2.1 Frontend . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .     14
+      7.2.2 Backend . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      14
+      7.2.3 Base de Données . . . . . . . . . . . . . . . . . . . . . . . . . . . .        14
+      7.2.4 Temps Réel . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       14
+      7.2.5 Paiements . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      14
+
+
+                                             1
+Gestion de Stock Intelligente                                      Cahier des Charges - v2.0
+
+
+         7.2.6 IA & Machine Learning . . . . . . . . . . . . . . . . . . . . . . . .         15
+         7.2.7 Infrastructure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    15
+         7.2.8 Sécurité . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    15
+   7.3   API . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   15
+   7.4   Performance & Optimisation . . . . . . . . . . . . . . . . . . . . . . . . . .      15
+
+8 Modèle de Données                                                                      16
+  8.1 Tables Principales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+  8.2 Relations Clés . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+
+9 UX/UI Design                                                                               17
+  9.1 Principes de Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      17
+  9.2 Fonctionnalités UX . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       17
+  9.3 Pages Principales . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      17
+
+10 Intégrations Externes                                                                  18
+   10.1 Intégrations Essentielles . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+   10.2 Intégrations Avancées (Phase 2-3) . . . . . . . . . . . . . . . . . . . . . . . 18
+
+11 Workflow Général                                                                          18
+
+12 Sécurité et Conformité                                                                    19
+   12.1 Mesures de Sécurité . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    19
+   12.2 Sauvegardes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    19
+   12.3 Plan de Reprise d’Activité . . . . . . . . . . . . . . . . . . . . . . . . . . .     19
+   12.4 Conformité RGPD (si applicable) . . . . . . . . . . . . . . . . . . . . . . .        19
+
+13 Tests et Assurance Qualité                                                            20
+   13.1 Types de Tests . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+   13.2 Stratégie QA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+
+14 Planning et Phases                                                                        20
+   14.1 Phase 1 – MVP (15 semaines) . . . . . . . . . . . . . . . . . . . . . . . . .        21
+   14.2 Phase 2 – Fonctionnalités Avancées (10 semaines) . . . . . . . . . . . . . .         21
+   14.3 Phase 3 – Innovation IA (12 semaines) . . . . . . . . . . . . . . . . . . . .        21
+   14.4 Planning Global . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    21
+
+15 Équipe Projet                                                                          22
+   15.1 Rôles Nécessaires . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+
+16 Budget Estimatif                                                                          23
+
+17 Livrables                                                                                 24
+   17.1 Documentation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .      24
+   17.2 Design . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   24
+   17.3 Code . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   25
+   17.4 Déploiement . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    25
+
+
+
+
+                                              2
+Gestion de Stock Intelligente                                     Cahier des Charges - v2.0
+
+
+18 Critères de Validation                                                                   25
+   18.1 Critères Fonctionnels . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   25
+   18.2 Critères Techniques . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   25
+   18.3 Critères UX . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .   26
+
+19 Risques et Mitigation                                                                    26
+
+20 Maintenance et Support                                                                   26
+   20.1 Maintenance Préventive . . . . . . . . . . . . . . . . . . . . . . . . . . . .      26
+   20.2 Maintenance Corrective . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    27
+   20.3 Support Utilisateurs . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    27
+
+21 Évolutions Futures                                                                27
+   21.1 Roadmap Post-Lancement . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+
+22 Conclusion                                                                               27
+
+
+
+
+                                              3
+Gestion de Stock Intelligente                                      Cahier des Charges - v2.0
+
+
+1      Présentation du Projet
+1.1     Contexte
+   L’objectif du projet est de concevoir et développer une application web complète de
+gestion de stock, destinée aux entreprises commerciales, magasins, supermarchés, phar-
+macies, dépôts, grossistes et distributeurs.
+   Le système doit permettre une gestion efficace des produits, des stocks, des ventes,
+des achats, des fournisseurs, des entrepôts, ainsi que la génération de rapports avancés.
+
+1.2     Vision
+   Créer une plateforme moderne, intuitive et évolutive qui automatise la gestion com-
+merciale tout en offrant des fonctionnalités innovantes (IA, temps réel, analytics avancés)
+pour aider les entreprises à optimiser leurs opérations.
+
+1.3     Approche de Développement
+    ¥ Approche MVP (Minimum Viable Product)
+
+    Le projet suivra une approche progressive en 3 phases :
+       1. Phase 1 - MVP (3,5 mois) : Fonctionnalités essentielles
+       2. Phase 2 - Expansion (2,5 mois) : Fonctionnalités avancées
+       3. Phase 3 - Innovation (3 mois) : IA et features premium
+
+
+
+2      Objectifs du Projet
+2.1     Objectifs Principaux
+    $ Faciliter la gestion et le suivi des stocks en temps réel
+    $ Automatiser les processus de ventes et d’achats
+    $ Éviter les ruptures de stock grâce aux alertes intelligentes
+    $ Améliorer la traçabilité complète des produits
+    $ Centraliser toutes les opérations commerciales
+    $ Fournir une interface moderne, rapide et intuitive
+    $ Générer des rapports analytiques exploitables
+
+2.2     Objectifs Avancés
+     Intégrer l’intelligence artificielle pour la prévision de stocks
+     Fournir un système multi-boutiques et multi-entrepôts
+     Proposer une vue analytique intelligente et prédictive
+     Synchronisation temps réel entre utilisateurs
+     Mode offline avec synchronisation automatique
+
+                                               4
+Gestion de Stock Intelligente                                 Cahier des Charges - v2.0
+
+
+     Assistant vocal pour commandes vocales
+     Reconnaissance d’image pour identification produits
+
+
+3       Public Cible
+    — Commerces de détail (boutiques, magasins)
+    — Supermarchés et supérettes
+    — Pharmacies et parapharmacies
+    — Dépôts et magasins de gros
+    — Entreprises multi-agences
+    — Entreprises avec plusieurs entrepôts
+    — Entrepreneurs individuels et PME
+    — Distributeurs et grossistes
+
+
+4       Modèle Économique
+    . À Définir
+    Options possibles :
+       — SaaS par abonnement : Mensuel/Annuel (recommandé)
+       — Freemium : Version gratuite limitée + Premium
+       — Par utilisateur : Prix selon nombre d’utilisateurs
+       — Licence unique : Paiement one-time + maintenance
+    Paramètres à préciser :
+       — Nombre d’utilisateurs simultanés cible
+       — Volume de transactions journalières prévu
+       — Taille maximale catalogue (nombre de produits)
+       — Cloud multi-tenant ou instances dédiées
+
+
+5       Périmètre Fonctionnel
+5.1     Phase 1 – MVP (Priorité Maximale)
+5.1.1     Module Authentification & Sécurité
+     Fonctionnalités essentielles :
+    — Inscription / Connexion sécurisée
+    — Récupération mot de passe (email)
+    — Double authentification (2FA email/SMS)
+    — Gestion des rôles prédéfinis :
+
+
+                                             5
+Gestion de Stock Intelligente                                  Cahier des Charges - v2.0
+
+
+        — Administrateur (tous droits)
+        — Manager (gestion complète sauf paramètres système)
+        — Caissier (ventes uniquement)
+        — Magasinier (stock uniquement)
+        — Comptable (rapports et finances)
+  — Permissions granulaires par module
+  — Historique d’activité (audit log)
+  — Déconnexion automatique après inactivité
+   Sécurité renforcée :
+  — Mots de passe hashés (Bcrypt)
+  — Protection CSRF et XSS
+  — Rate limiting API (prévention DDoS)
+  — Validation stricte des entrées
+  — Sessions sécurisées avec timeout
+  — HTTPS obligatoire
+  — Journalisation complète (logs)
+
+5.1.2   e Module Gestion des Produits
+   Fonctionnalités de base :
+  — CRUD complet (Ajout / Modification / Suppression / Consultation)
+  — Catégories et sous-catégories hiérarchiques
+  — Marques et fabricants
+  — Codes-barres automatiques (EAN13/QR Code)
+  — Images multiples par produit (avec compression)
+  — Prix d’achat et prix de vente
+  — Description et notes internes
+  — Statut (actif/inactif/archivé)
+   Fonctionnalités avancées :
+  — Importation en masse (Excel/CSV)
+  — Export (Excel/PDF)
+  — Recherche intelligente (multi-critères, typo-tolérant)
+  — Historique des modifications
+  — Détection automatique d’erreurs de saisie
+  — Tags personnalisables (promo, bio, nouveau, etc.)
+  — Unités de mesure multiples (pièce, kg, litre, carton, palette)
+  — Historique des prix (traçabilité)
+
+
+
+
+                                           6
+Gestion de Stock Intelligente                              Cahier des Charges - v2.0
+
+
+5.1.3   Õ Module Gestion des Entrepôts
+   MVP - Un seul entrepôt principal
+   Phase 2 - Multi-entrepôts :
+  — Création de plusieurs entrepôts/magasins
+  — Localisation géographique
+  — Affectation des produits par entrepôt
+  — Transfert de stock entre entrepôts
+  — Historique de tous les mouvements
+  — Responsable par entrepôt
+
+5.1.4   ¢ Module Gestion des Stocks
+   Opérations de stock :
+  — Entrées de stock (approvisionnement)
+  — Sorties de stock (ventes, pertes, casse)
+  — Ajustements manuels (avec justification obligatoire)
+  — Inventaire complet ou partiel
+  — Stock disponible en temps réel
+   Alertes et notifications :
+  — Stock minimal (seuil personnalisable par produit)
+  — Stock alerte (réapprovisionnement recommandé)
+  — Notification automatique de rupture de stock
+  — Produits à rotation lente
+   Traçabilité :
+  — Numéros de lot (optionnel)
+  — Numéros de série (optionnel)
+  — Dates d’expiration (pour produits périssables)
+  — Historique consultable (utilisateur/date/entrepôt)
+  — Mouvement de stock en temps réel
+
+5.1.5   ï Module Ventes
+   Point de Vente (POS) :
+  — Interface rapide et fluide pour encaissement
+  — Recherche produit (nom, code-barre, scan)
+  — Panier dynamique
+  — Gestion des quantités
+  — Remises (pourcentage ou montant fixe)
+  — Remise par ligne ou sur total
+  — Calcul automatique TVA
+
+
+                                            7
+Gestion de Stock Intelligente                               Cahier des Charges - v2.0
+
+
+  — Validation de stock avant vente
+   Gestion des paiements (MVP - Espèces uniquement) :
+  — Paiement espèces
+  — Calcul automatique de la monnaie
+  — Historique des transactions
+   Documents :
+  — Génération tickets de caisse (PDF)
+  — Génération factures (PDF)
+  — Impression thermique (optionnel)
+  — Numérotation automatique
+   Gestion post-vente :
+  — Retours produits
+  — Remboursements (total ou partiel)
+  — Notes de crédit (avoir client)
+  — Annulation de vente (avec autorisation)
+   Historique et suivi :
+  — Historique complet des ventes
+  — Recherche multi-critères
+  — Export Excel/PDF
+
+5.1.6   M Module Rapports & Statistiques (MVP)
+   Rapports essentiels :
+  — Rapport d’inventaire (stock actuel)
+  — Rapport de ventes (journalier, hebdomadaire, mensuel)
+  — Rapport de bénéfice/perte
+  — Top produits vendus
+  — Ventes par catégorie
+  — Export PDF/Excel
+   Tableau de bord (Dashboard) :
+  — KPIs en temps réel :
+        — Chiffre d’affaires du jour
+        — Nombre de ventes
+        — Produits en rupture
+        — Stock total (valeur)
+        — Bénéfice estimé
+  — Graphiques dynamiques (bars, lignes, donuts)
+  — Période personnalisable
+
+
+
+
+                                          8
+Gestion de Stock Intelligente                        Cahier des Charges - v2.0
+
+
+5.2     Phase 2 – Fonctionnalités Avancées
+5.2.1    Module Achats & Approvisionnement
+  — Création de commandes fournisseurs
+  — Devis fournisseurs
+  — Bons de commande (PDF)
+  — Réception totale ou partielle
+  — Factures d’achat
+  — Paiements des fournisseurs
+  — Gestion des dettes fournisseurs
+  — Historique des transactions par fournisseur
+  — Comparatif prix fournisseurs
+
+5.2.2   ² Module Clients & Fournisseurs
+   Gestion Clients :
+  — Fiches détaillées (nom, contact, adresse)
+  — Historique des achats
+  — Gestion du crédit client (limite de crédit)
+  — Suivi des paiements clients
+  — Alertes dettes impayées
+  — Programme de fidélité (points)
+  — Catégories de clients (VIP, régulier, nouveau)
+   Gestion Fournisseurs :
+  — Fiches complètes
+  — Produits fournis
+  — Historique des commandes
+  — Conditions de paiement
+  — Évaluation fournisseur (qualité, délai)
+  — États financiers par fournisseur
+
+5.2.3   ê Paiements Digitaux
+  — Mobile Money (MTN Momo, Moov Money)
+  — Intégration FedaPay
+  — Carte bancaire (Stripe ou équivalent)
+  — Paiement mixte (espèces + digital)
+  — Virement bancaire
+  — Historique des transactions
+  — Réconciliation bancaire
+
+
+                                              9
+Gestion de Stock Intelligente                               Cahier des Charges - v2.0
+
+
+5.2.4   ¡ Rapports & Analytics Avancés
+  — Analyse ABC (classification produits par rentabilité)
+  — Marge bénéficiaire par produit/catégorie
+  — Taux de rotation des stocks
+  — Rapport fournisseur détaillé
+  — Prévisions de ventes (basé sur historique)
+  — Comparatif de périodes (vs mois/année précédente)
+  — Analyse des tendances
+  — Rapport des pertes et casses
+  — Rapport de performance par utilisateur
+  — Dashboard personnalisable (widgets déplaçables)
+
+5.2.5   f Fonctionnalités Produits Avancées
+  — Variantes produits (taille, couleur, modèle)
+  — Produits composites (bundles, packs)
+  — Promotions temporaires (dates de début/fin)
+  — Prix différenciés (gros/détail, par client)
+  — Stock de sécurité calculé automatiquement
+  — Seuil de réapprovisionnement par entrepôt
+
+5.2.6   9 Multi-entrepôts Complet
+  — Gestion illimitée d’entrepôts
+  — Transferts inter-entrepôts avec validation
+  — Stock en transit
+  — Rapports par entrepôt
+  — Tableau de bord consolidé
+  — Auto-synchronisation en temps réel
+
+5.3     Phase 3 – Innovation & Intelligence Artificielle
+5.3.1   j Intelligence Artificielle
+   Prévision de Rupture de Stock :
+  — Algorithme : Time Series Forecasting (ARIMA, Prophet, LSTM)
+  — Analyse de l’historique (minimum 6 mois de données)
+  — Prise en compte de la saisonnalité
+  — Événements externes (promotions, fêtes, jours fériés)
+  — Alertes proactives (X jours avant rupture)
+   Détection d’Anomalies :
+  — Algorithme : Isolation Forest ou Z-score
+
+                                            10
+Gestion de Stock Intelligente                               Cahier des Charges - v2.0
+
+
+  — Détection de ventes anormales (hausse/baisse brutale)
+  — Détection d’erreurs de saisie
+  — Détection de fraude potentielle
+  — Incohérences de stock
+   Recommandations Intelligentes :
+  — Quantité optimale de réapprovisionnement
+  — Meilleur moment pour commander
+  — Produits à promouvoir (rotation lente)
+  — Suggestions de bundles (produits souvent achetés ensemble)
+   Limitations documentées :
+  — L’IA nécessite un ajustement manuel initial
+  — Précision augmente avec le temps et les données
+  — Ne remplace pas l’expertise humaine
+  — Validation manuelle recommandée
+
+5.3.2   ? Assistant Vocal Intelligent
+  — Commandes vocales en français
+  — Exemples de commandes :
+        — "Quel est le stock du sucre ?"
+        — "Ajoute 40 pièces au stock du riz parfumé"
+        — "Montre-moi les ventes d’aujourd’hui"
+        — "Combien ai-je vendu hier ?"
+  — Reconnaissance vocale offline (optionnel)
+  — Réponses vocales
+  — Intégration dans l’interface POS
+
+5.3.3    Reconnaissance d’Image
+  — Identification de produits par photo
+  — Scan de codes-barres via caméra
+  — Suggestions intelligentes si produit inconnu
+  — Reconnaissance de logo/marque
+  — Contrôle qualité visuel (défauts produits)
+
+5.3.4   L Collaboration Temps Réel
+  — Plusieurs utilisateurs modifiant simultanément un inventaire
+  — Synchronisation type Google Docs
+  — Indicateurs de présence (qui est connecté)
+  — Notifications en temps réel
+  — Gestion des conflits automatique (CRDT)
+
+                                           11
+Gestion de Stock Intelligente                               Cahier des Charges - v2.0
+
+
+5.3.5    Catalogue Public E-commerce
+  — Mini-site vitrine synchronisé au stock
+  — Commandes en ligne
+  — Réservation de produits
+  — Synchronisation automatique des stocks
+  — Paiements en ligne intégrés
+  — Gestion des livraisons
+
+5.3.6   Û Mode Offline Avancé
+  — Fonctionnement sans connexion internet
+  — Synchronisation automatique à la reconnexion
+  — Gestion des conflits (Conflict-free Replicated Data Type)
+  — Queue de synchronisation
+  — Indicateur de statut (online/offline/syncing)
+  — Historique des modifications offline
+
+
+
+
+                                           12
+Gestion de Stock Intelligente                                Cahier des Charges - v2.0
+
+
+6     Système de Notifications
+    I Notifications Intelligentes
+    Types de notifications :
+      — Stock :
+           — Stock bas (seuil personnalisable)
+           — Rupture de stock
+           — Produits proches de l’expiration
+           — Produits à rotation lente
+      — Finances :
+           — Retard paiement fournisseur
+           — Dette client dépassée
+           — Objectif de vente atteint
+      — Activités :
+           — Vente importante
+           — Retour produit
+           — Nouvelle commande fournisseur
+      — Sécurité :
+           — Tentatives de connexion échouées
+           — Modifications sensibles (suppression massive)
+           — Activités suspectes
+    Canaux :
+      — In-app (interface)
+      — Email
+      — SMS (optionnel)
+      — WhatsApp Business API (Phase 3)
+
+
+7     Spécifications Techniques
+7.1     Architecture Globale
+    Architecture Microservices Modulaire (Recommandée) :
+API Gateway (rate limiting, authentification)
+     Service Auth & Users
+     Service Produits & Stocks
+     Service Ventes & POS
+     Service Achats & Fournisseurs
+     Service Rapports & Analytics
+     Service IA (séparé, scalable)
+     Service Notifications
+     Service Synchronisation
+
+                                           13
+Gestion de Stock Intelligente                          Cahier des Charges - v2.0
+
+
+7.2     Stack Technique
+7.2.1   Frontend
+  — Framework : React.js 18+ avec Next.js 14+ (SSR/SSG)
+  — Styling : Tailwind CSS 3+
+  — UI Components : Shadcn UI
+  — State Management : Zustand ou Redux Toolkit
+  — Forms : React Hook Form + Zod (validation)
+  — Charts : Recharts ou Chart.js
+  — Tables : TanStack Table (React Table v8)
+  — Date : date-fns ou Day.js
+  — Icons : Lucide React ou Heroicons
+
+7.2.2   Backend
+  Option 1 (Recommandée) :
+  — Framework : Laravel 11+
+  — API : Laravel API Resources
+  — Auth : Laravel Sanctum
+  — Queue : Laravel Queue (Redis)
+  — Cache : Redis
+  — Search : Laravel Scout + Meilisearch
+  Option 2 :
+  — Framework : Node.js avec Express.js
+  — ORM : Prisma ou TypeORM
+  — Auth : Passport.js ou JWT
+  — Validation : Joi ou Zod
+
+7.2.3   Base de Données
+  — Principale : PostgreSQL 15+ (recommandé) ou MySQL 8+
+  — Cache : Redis 7+
+  — Queue : Redis ou RabbitMQ
+  — Full-text Search : Meilisearch ou Elasticsearch
+
+7.2.4   Temps Réel
+  — WebSockets : Laravel Reverb, Pusher ou Socket.io
+  — Broadcasting : Laravel Echo (frontend)
+
+7.2.5   Paiements
+  — Mobile Money : API MTN Momo, API Moov Money
+  — Agrégateur : FedaPay (multi-provider)
+  — Carte bancaire : Stripe ou PayPal
+
+                                       14
+Gestion de Stock Intelligente                               Cahier des Charges - v2.0
+
+
+7.2.6   IA & Machine Learning
+  — Prévisions : Prophet (Facebook), scikit-learn, TensorFlow
+  — Anomalies : scikit-learn (Isolation Forest)
+  — NLP (vocal) : Google Speech-to-Text API
+  — Vision : TensorFlow.js, Google Vision API
+  — Runtime : Python 3.11+ (service séparé)
+
+7.2.7   Infrastructure
+  — Hébergement :
+        — Option 1 : AWS (EC2, RDS, S3, CloudFront)
+        — Option 2 : DigitalOcean (App Platform, Managed Database)
+        — Option 3 : Render ou Railway (développement rapide)
+  — CDN : CloudFlare ou AWS CloudFront
+  — Storage : AWS S3 ou DigitalOcean Spaces
+  — Monitoring : Sentry (errors), Datadog ou New Relic
+  — CI/CD : GitHub Actions ou GitLab CI
+
+7.2.8   Sécurité
+  — SSL/TLS : Let’s Encrypt (gratuit)
+  — Firewall : UFW ou AWS Security Groups
+  — WAF : CloudFlare WAF
+  — Backup : Automatique quotidien (rétention 30 jours)
+  — Monitoring : Uptime Robot, Pingdom
+
+7.3     API
+  — Type : RESTful API
+  — Format : JSON
+  — Versioning : /api/v1, /api/v2
+  — Documentation : Swagger/OpenAPI 3.0
+  — Rate Limiting : 100 req/min (utilisateur authentifié)
+  — CORS : Configuré strictement
+  — Pagination : Cursor-based ou offset-based
+
+7.4     Performance & Optimisation
+  — Cache : Redis pour requêtes fréquentes (stock, prix)
+  — CDN : Images produits via CDN
+  — Lazy Loading : Images et composants
+  — Code Splitting : Par route (Next.js automatique)
+
+                                         15
+Gestion de Stock Intelligente                               Cahier des Charges - v2.0
+
+
+    — Database Indexing : Clés primaires, étrangères, recherche
+    — Queue System : Tâches asynchrones (rapports, emails, exports)
+    — Compression : Gzip/Brotli pour assets
+    — Image Optimization : WebP, responsive images
+
+
+8     Modèle de Données
+8.1     Tables Principales
+    1. users – Utilisateurs du système
+    2. roles – Rôles (admin, manager, etc.)
+    3. permissions – Permissions granulaires
+    4. role_permissions – Liaison rôles-permissions
+    5. companies – Entreprises (multi-tenant)
+    6. warehouses – Entrepôts/Magasins
+    7. categories – Catégories de produits
+    8. brands – Marques
+    9. products – Produits
+ 10. product_variants – Variantes (taille, couleur...)
+ 11. product_images – Images produits
+ 12. product_bundles – Produits composites
+ 13. price_history – Historique des prix
+ 14. stocks – Stock par produit/entrepôt
+ 15. stock_movements – Mouvements de stock
+ 16. stock_transfers – Transferts inter-entrepôts
+ 17. customers – Clients
+ 18. suppliers – Fournisseurs
+ 19. sales – Ventes (en-tête)
+ 20. sale_items – Lignes de vente
+ 21. purchases – Achats fournisseurs (en-tête)
+ 22. purchase_items – Lignes d’achat
+ 23. payments – Paiements (ventes et achats)
+ 24. promotions – Promotions temporaires
+ 25. loyalty_programs – Programmes de fidélité
+ 26. notifications – Notifications système
+ 27. audit_logs – Journalisation des actions
+ 28. ai_predictions – Prévisions IA
+ 29. settings – Paramètres globaux
+ 30. user_preferences – Préférences utilisateur
+
+                                             16
+Gestion de Stock Intelligente                                Cahier des Charges - v2.0
+
+
+8.2     Relations Clés
+    — Un user appartient à un role
+    — Un product appartient à une category et une brand
+    — Un stock lie un product à un warehouse
+    — Une sale contient plusieurs sale_items
+    — Un payment est lié à une sale ou purchase
+    — Un stock_movement trace chaque modification de stock
+
+
+9      UX/UI Design
+9.1     Principes de Design
+    — Simplicité : Interface épurée, claire
+    — Rapidité : Temps de réponse < 200ms
+    — Intuitif : Navigation naturelle, 3 clics max
+    — Responsive : Desktop, tablette, mobile
+    — Accessibilité : WCAG 2.1 Level AA
+    — Cohérence : Design system uniforme
+
+9.2     Fonctionnalités UX
+    — Mode sombre (économie d’énergie, confort)
+    — Recherche intelligente (typo-tolérant, suggestions)
+    — Raccourcis clavier (caissiers expérimentés)
+    — Dashboard personnalisable (drag & drop widgets)
+    — Guide interactif (onboarding nouveaux utilisateurs)
+    — Tooltips contextuels (aide inline)
+    — Feedback visuel (loading, success, errors)
+    — Navigation au clavier (accessibilité)
+
+9.3     Pages Principales
+  1. Dashboard – Vue d’ensemble KPIs
+  2. Produits – Liste, ajout, modification
+  3. Stock – Inventaire, mouvements, alertes
+  4. Ventes (POS) – Interface de caisse
+  5. Historique Ventes – Liste des transactions
+  6. Achats – Commandes fournisseurs
+  7. Clients – Gestion des clients
+  8. Fournisseurs – Gestion des fournisseurs
+  9. Rapports – Statistiques et exports
+ 10. Paramètres – Configuration système
+ 11. Profil – Informations utilisateur
+
+                                            17
+Gestion de Stock Intelligente                           Cahier des Charges - v2.0
+
+
+10     Intégrations Externes
+10.1    Intégrations Essentielles
+  — Paiements : MTN Momo, Moov Money, FedaPay, Stripe
+  — Email : SendGrid, Mailgun, Amazon SES
+  — SMS : Twilio, Africa’s Talking
+
+10.2    Intégrations Avancées (Phase 2-3)
+  — Comptabilité : Export vers Sage, QuickBooks, Wave
+  — Email Marketing : Mailchimp, Brevo (Sendinblue)
+  — WhatsApp : WhatsApp Business API
+  — Impression : Drivers imprimantes thermiques (ESC/POS)
+  — Scanners : Support codes-barres USB/Bluetooth
+  — E-commerce : WooCommerce, Shopify (sync)
+
+
+11     Workflow Général
+  1. Configuration initiale
+       — Création compte entreprise
+       — Configuration entrepôt(s)
+       — Ajout des utilisateurs et rôles
+       — Paramétrage général (devise, TVA, etc.)
+  2. Mise en place du catalogue
+       — Création des catégories
+       — Ajout des produits (manuel ou import)
+       — Configuration des prix
+       — Upload des images
+  3. Gestion du stock
+       — Entrée du stock initial (inventaire)
+       — Ajout des fournisseurs
+       — Commandes d’approvisionnement
+       — Réception des marchandises
+  4. Opérations quotidiennes
+       — Ventes via POS
+       — Encaissements
+       — Mise à jour automatique du stock
+       — Génération de rapports
+  5. Analyse et optimisation
+       — Consultation des rapports
+       — Analyse des tendances
+
+                                          18
+Gestion de Stock Intelligente                        Cahier des Charges - v2.0
+
+
+      — Ajustement des stocks
+      — Décisions stratégiques basées sur données
+  6. IA et automatisation (Phase 3)
+      — Prévisions de rupture
+      — Recommandations automatiques
+      — Alertes proactives
+
+
+12     Sécurité et Conformité
+12.1    Mesures de Sécurité
+  — Mots de passe hashés (Bcrypt, cost 12+)
+  — HTTPS obligatoire (TLS 1.3)
+  — Protection CSRF (tokens)
+  — Protection XSS (sanitization)
+  — Protection SQL Injection (prepared statements)
+  — Rate limiting API (100 req/min)
+  — Session timeout (30 min inactivité)
+  — 2FA obligatoire pour admins
+  — Logs d’audit complets
+  — Chiffrement données sensibles (AES-256)
+
+12.2    Sauvegardes
+  — Backup automatique quotidien (3h du matin)
+  — Rétention : 30 jours (rolling)
+  — Stockage : Offsite (S3 ou équivalent)
+  — Tests de restauration : Mensuel
+  — Backup incrémental : Toutes les 6h
+
+12.3    Plan de Reprise d’Activité
+  — RTO (Recovery Time Objective) : < 4 heures
+  — RPO (Recovery Point Objective) : < 1 heure
+  — Procédure documentée de restauration
+  — Serveur de secours (failover automatique)
+
+12.4    Conformité RGPD (si applicable)
+  — Consentement explicite utilisateur
+  — Droit à l’oubli (suppression données)
+  — Export des données personnelles
+  — Minimisation des données collectées
+  — Politique de confidentialité claire
+  — DPO (Data Protection Officer) si nécessaire
+
+                                        19
+Gestion de Stock Intelligente                            Cahier des Charges - v2.0
+
+
+13     Tests et Assurance Qualité
+13.1    Types de Tests
+  — Tests Unitaires (85%+ coverage)
+       — Backend : PHPUnit (Laravel) ou Jest (Node.js)
+       — Frontend : Jest + React Testing Library
+  — Tests d’Intégration
+       — API endpoints
+       — Workflows complets
+       — Intégrations tierces (mock)
+  — Tests End-to-End (E2E)
+       — Cypress ou Playwright
+       — Scénarios utilisateur complets
+       — Tests de régression
+  — Tests de Performance
+       — Load testing (Apache JMeter, k6)
+       — Stress testing
+       — Temps de réponse < 200ms
+  — Tests de Sécurité
+       — OWASP Top 10
+       — Penetration testing
+       — Scan de vulnérabilités
+  — Tests d’Accessibilité
+       — WCAG 2.1 compliance
+       — Lighthouse (score > 90)
+
+13.2    Stratégie QA
+  — CI/CD avec tests automatiques
+  — Code Review obligatoire (PR)
+  — Staging Environment (pré-production)
+  — Beta Testing avec utilisateurs réels
+  — Bug Tracking (Jira, Linear, GitHub Issues)
+  — Monitoring en production (Sentry, Datadog)
+
+
+14     Planning et Phases
+
+
+
+
+                                           20
+Gestion de Stock Intelligente                                   Cahier des Charges - v2.0
+
+
+14.1    Phase 1 – MVP (15 semaines)
+    Tâche                Durée               Détails
+    Analyse & Conception 2 semaines          UML, base de données, architec-
+                                             ture
+    Design UI/UX                2 semaines   Maquettes Figma, design system
+    Backend MVP                 4 semaines   Auth, produits, stock, ventes
+                                             simples
+    Frontend MVP                4 semaines   Interface utilisateur, POS, rap-
+                                             ports
+    Tests & QA                  2 semaines   Tests complets, corrections bugs
+    Déploiement                 1 semaine    Serveur, domaine, configuration
+    Total Phase 1               15 sem.      MVP fonctionnel
+
+14.2    Phase 2 – Fonctionnalités Avancées (10 semaines)
+    Tâche                 Durée              Détails
+    Multi-entrepôts       2 semaines         Transferts, synchronisation
+    Achats & Fournisseurs 2 semaines         Commandes, réceptions, paie-
+                                             ments
+    Clients avancés             1 semaine    Crédit, fidélité, historique
+    Paiements digitaux          2 semaines   Intégrations MTN, Moov, Feda-
+                                             Pay
+    Rapports avancés            2 semaines   Analytics, prévisions, dashboard
+    Tests & QA                  1 semaine    Tests et corrections
+    Total Phase 2               10 sem.      Version complète
+
+14.3    Phase 3 – Innovation IA (12 semaines)
+    Tâche                       Durée        Détails
+    IA Prévisions               4 semaines   Modèles ML, training, intégration
+    Assistant Vocal             3 semaines   Speech-to-text, commandes
+    Reconnaissance Image        3 semaines   Vision API, identification
+    Temps Réel Avancé           1 semaine    Collaboration, CRDT
+    Catalogue E-commerce        1 semaine    Mini-site, sync stocks
+    Total Phase 3               12 sem.      Version Premium
+
+14.4    Planning Global
+   Durée totale estimée : 37 semaines (9̃ mois)
+  — Phase 1 (MVP) : 15 semaines
+  — Phase 2 (Avancé) : 10 semaines
+  — Phase 3 (Innovation) : 12 semaines
+   Note : Ces durées supposent une équipe de 2-3 développeurs à temps plein.
+
+
+
+
+                                             21
+Gestion de Stock Intelligente                    Cahier des Charges - v2.0
+
+
+15     Équipe Projet
+15.1    Rôles Nécessaires
+  — 1 Chef de Projet / Product Owner
+  — 1-2 Développeurs Backend (Laravel/Node.js)
+  — 1-2 Développeurs Frontend (React/Next.js)
+  — 1 UI/UX Designer
+  — 1 Data Scientist / ML Engineer (Phase 3)
+  — 1 QA Tester
+  — 1 DevOps (configuration serveurs, CI/CD)
+
+
+
+
+                                      22
+Gestion de Stock Intelligente                              Cahier des Charges - v2.0
+
+
+16     Budget Estimatif
+     Budget Indicatif (en FCFA)
+
+   Phase 1 – MVP (15 semaines)
+     Poste de dépense                       Min (FCFA) Max (FCFA)
+     A. Ressources Humaines
+     Chef de Projet (3,5 mois)                 2 500 000   4 000 000
+     Développeur Backend Senior (3,5 mois)     4 000 000   6 500 000
+     Développeur Frontend Senior (3,5 mois)    4 000 000   6 500 000
+     UI/UX Designer (2 mois)                   2 000 000   3 500 000
+     QA Tester (1,5 mois)                      1 200 000   2 000 000
+     DevOps Engineer (1 mois)                  1 500 000   2 500 000
+     Sous-total RH                           15 200 000  25 000 000
+
+     B. Infrastructure & Hébergement (1ère année)
+     Serveur Cloud (AWS/DigitalOcean)          600 000          1 200 000
+     Base de données managée                   400 000            800 000
+     CDN & Storage (images)                    200 000            400 000
+     Nom de domaine                             20 000             30 000
+     Certificat SSL (Let’s Encrypt gratuit)          0                  0
+     Monitoring & Logs (Sentry, etc.)          150 000            300 000
+     Backups automatiques                      100 000            200 000
+     Email service (SendGrid/Mailgun)           80 000            150 000
+     Sous-total Infrastructure              1 550 000          3 080 000
+
+     C. Licences & APIs
+     Figma Pro (Design)                           80 000           80 000
+     GitHub/GitLab Pro                           100 000          150 000
+     API Mobile Money (tests)                    200 000          400 000
+     Outils de développement                     150 000          300 000
+     Sous-total Licences                        530 000          930 000
+
+     D. Divers
+     Documentation & Tutoriels                   500 000        1 000 000
+     Tests de sécurité                           400 000          800 000
+     Formation équipe client                     300 000          600 000
+     Contingence (10% imprévus)                1 800 000        3 100 000
+     Sous-total Divers                        3 000 000        5 500 000
+
+     TOTAL PHASE 1 (MVP)                     20 280 000       34 510 000
+
+
+   Phase 2 – Fonctionnalités Avancées (10 semaines)
+     Poste de dépense                    Min (FCFA) Max (FCFA)
+     Développement (2 devs × 2,5 mois)      8 000 000  13 000 000
+     Intégrations paiements                 1 500 000   2 500 000
+                                         23
+     Tests & QA                               800 000   1 500 000
+     Infrastructure additionnelle             500 000   1 000 000
+     TOTAL PHASE 2                        10 800 000  18 000 000
+Gestion de Stock Intelligente                               Cahier des Charges - v2.0
+
+
+   ò Notes Importantes
+
+     — Taux de change : 1 EUR = 655,957 FCFA (taux fixe zone UEMOA)
+     — Localisation : Ces tarifs sont adaptés au marché ouest-africain
+     — Freelance vs Agence : Les tarifs peuvent varier de 30-50% selon le type de
+       prestataire
+     — Équipe locale : Privilégier une équipe mixte (seniors + juniors) pour opti-
+       miser les coûts
+     — Paiement échelonné recommandé :
+          — 30% au démarrage
+          — 40% à mi-parcours (fin backend)
+          — 30% à la livraison finale
+     — Options de financement :
+          — Financement bancaire (prêt PME)
+          — Investisseurs (equity)
+          — Paiement par tranches sur 12 mois
+          — Partenariat technique (partage revenus)
+
+
+
+17     Livrables
+17.1    Documentation
+  1. Cahier des charges (ce document)
+  2. Spécifications techniques détaillées
+  3. Diagrammes UML (use case, classes, séquences)
+  4. Schéma base de données (ERD)
+  5. Documentation API (Swagger/OpenAPI)
+  6. Guide d’installation serveur
+  7. Manuel administrateur
+  8. Manuel utilisateur (par rôle)
+  9. Guide de troubleshooting
+ 10. Vidéos tutoriels
+
+17.2    Design
+  1. Maquettes Figma complètes
+  2. Design system documenté
+  3. Assets graphiques (logos, icônes)
+  4. Prototypes interactifs
+
+
+
+
+                                            24
+Gestion de Stock Intelligente                                Cahier des Charges - v2.0
+
+
+17.3    Code
+  1. Code source complet (Frontend + Backend)
+  2. Repository Git organisé
+  3. Tests automatisés
+  4. Scripts de déploiement
+  5. Configuration CI/CD
+
+17.4    Déploiement
+  1. Application déployée en production
+  2. Nom de domaine configuré
+  3. SSL/HTTPS activé
+  4. Monitoring configuré
+  5. Backups automatiques actifs
+
+
+18     Critères de Validation
+18.1    Critères Fonctionnels
+  § Authentification et gestion des rôles fonctionnelle
+  § CRUD produits complet et fluide
+  § Stock mis à jour en temps réel après chaque vente
+  § POS rapide (< 3 secondes par vente)
+  § Rapports générés correctement (données exactes)
+  § Notifications envoyées automatiquement
+  § Paiements traités avec succès (100% de réussite)
+  § Export Excel/PDF fonctionnel
+  § Recherche rapide (< 1 seconde)
+
+18.2    Critères Techniques
+  § Performance : Temps de chargement < 2 secondes
+  § Responsive : Fonctionnel sur mobile, tablette, desktop
+  § Sécurité : Tests de pénétration passés
+  § Disponibilité : Uptime > 99,5%
+  § Tests : Coverage > 80%
+  § Accessibilité : Score Lighthouse > 90
+  § SEO (si catalogue public) : Score > 85
+
+
+
+
+                                            25
+Gestion de Stock Intelligente                                 Cahier des Charges - v2.0
+
+
+18.3     Critères UX
+  § Interface intuitive (utilisateurs formés en < 2h)
+  § Navigation claire (3 clics max pour toute action)
+  § Feedback visuel approprié
+  § Messages d’erreur clairs et explicites
+  § Satisfaction utilisateur > 80% (sondage post-lancement)
+
+
+19      Risques et Mitigation
+   . Risques Identifiés
+       1. Risque : Complexité excessive
+          — Impact : Projet interminable, budget dépassé
+          — Mitigation : Approche MVP, développement par phases
+       2. Risque : IA non performante
+          — Impact : Prévisions inexactes, perte de confiance
+          — Mitigation : Phase 3 uniquement, données suffisantes requises
+       3. Risque : Synchronisation temps réel complexe
+          — Impact : Conflits de données, bugs
+          — Mitigation : Utiliser CRDT, tests approfondis
+       4. Risque : APIs tierces indisponibles
+          — Impact : Paiements bloqués
+          — Mitigation : Fallback espèces, multi-providers
+       5. Risque : Performance dégradée
+          — Impact : Application lente, abandon utilisateurs
+          — Mitigation : Load testing, cache Redis, optimisation
+       6. Risque : Sécurité compromise
+          — Impact : Fuite de données, perte de confiance
+          — Mitigation : Audits réguliers, tests de pénétration
+
+
+
+20      Maintenance et Support
+20.1     Maintenance Préventive
+  — Mises à jour de sécurité mensuelles
+  — Monitoring proactif 24/7
+  — Backups vérifiés hebdomadairement
+  — Optimisation base de données trimestrielle
+  — Revue de code régulière
+
+
+                                             26
+Gestion de Stock Intelligente                                Cahier des Charges - v2.0
+
+
+20.2    Maintenance Corrective
+  — Bugs critiques : Correction < 4h
+  — Bugs majeurs : Correction < 24h
+  — Bugs mineurs : Correction < 1 semaine
+  — Hotline technique disponible
+
+20.3    Support Utilisateurs
+  — Documentation en ligne complète
+  — Base de connaissances (FAQ)
+  — Tutoriels vidéo
+  — Support email (réponse < 24h)
+  — Support téléphone (heures ouvrables)
+  — Formation initiale (2 jours)
+  — Formations continues (trimestrielles)
+
+
+21     Évolutions Futures
+21.1    Roadmap Post-Lancement
+  — Version 1.1 (3 mois après MVP)
+       — Application mobile (iOS/Android)
+       — Mode kiosque (POS dédié)
+       — Intégration balance électronique
+  — Version 2.0 (6 mois après MVP)
+       — Gestion des recettes (restaurants)
+       — Gestion des services (rendez-vous)
+       — CRM intégré
+  — Version 3.0 (12 mois après MVP)
+       — Marketplace (connecter plusieurs boutiques)
+       — API publique (intégrations tierces)
+       — White-label (revendeurs)
+
+
+22     Conclusion
+   Ce cahier des charges présente une vision complète et structurée d’une application
+de gestion de stock moderne et évolutive. L’approche par phases (MVP → Avancé →
+Innovation) permet de :
+  — Réduire les risques en validant le concept rapidement
+  — Optimiser les coûts en priorisant les fonctionnalités essentielles
+  — Garantir la qualité en testant chaque phase séparément
+
+                                            27
+Gestion de Stock Intelligente                                   Cahier des Charges - v2.0
+
+
+  — S’adapter au marché en intégrant les retours utilisateurs
+
+
+
+
+   ¥ Recommandation Finale
+   Commencez par le MVP (Phase 1) pour avoir un produit fonctionnel et com-
+   mercialisable en 3,5 mois. Les phases 2 et 3 pourront être financées par les premiers
+   revenus de l’application.
+   Cette approche pragmatique maximise les chances de succès du projet.
+
+
+
+
+                            Document préparé avec expertise
+                            Version 2.0 – 7 décembre 2025
+
+
+                                            28
+
